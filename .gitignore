@@ -1,0 +1,8 @@
+/sample/target/
+/spring-capgemini-core/target/
+/spring-capgemini-web/target/
+/spring-capgemini-jaxb/target/
+/ws-client/target/
+/spring-jms/target/
+/spring-jmx/target/
+/spring-batch-sample/target/

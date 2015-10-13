@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xmlns:util="http://www.springframework.org/schema/util"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+          http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.0.xsd
+          http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd
+">
+    
+    <context:property-placeholder location="classpath:config.properties"/>
+    <context:annotation-config/>
+    <context:component-scan base-package="pl.altkom.spring.sample"/>
+    
+    
+<!--    <bean id="customerService" class="pl.altkom.spring.sample.CustomerServiceImpl">
+        
+    </bean>
+    
+    <bean id="newsletterService" class="pl.altkom.spring.sample.NewsletterServiceImpl">
+        <property name="customerService" ref="customerService"/>
+        <property name="smtpService" ref="smtpService"/>
+    </bean>
+    
+    <bean id="smtpService" class="pl.altkom.spring.sample.SmtpServiceImpl" init-method="init2" destroy-method="destroy">
+        <property name="mailServerName" value="${smtp.server}"/>
+        <property name="mailUser" value="${smtp.user}"/>
+        <property name="mailPasswd" value="${smtp.pass}"/>
+    </bean>-->
+
+    <bean id="smtpServiceImpl" class="pl.altkom.spring.sample.SmtpServiceImpl" init-method="init2" destroy-method="destroy">
+        <property name="mailServerName" value="${smtp.server}"/>
+        <property name="mailUser" value="${smtp.user}"/>
+        <property name="mailPasswd" value="${smtp.pass}"/>
+    </bean>
+
+    <util:list id="customerList">
+                <value>adrian@altkom.pl</value>
+                <value>ala@altkom.pl</value>
+                <value>ola@altkom.pl</value>
+    </util:list>
+
+</beans>
